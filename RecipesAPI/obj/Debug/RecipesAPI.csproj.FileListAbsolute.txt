@@ -101,3 +101,4 @@ D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.csproj.GenerateResource.c
 D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Initial1.resources
 D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.WithType.resources
 D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.csprojAssemblyReference.cache
+D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Relations.resources

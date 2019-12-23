@@ -12,5 +12,7 @@ namespace RecipesAPI.Models
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
+        public ICollection<Category> Categories { get; set; }
+
     }
 }

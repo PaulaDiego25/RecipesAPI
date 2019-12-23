@@ -180,7 +180,9 @@
     <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Controllers\RecipeTypesController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\StepIngredientsController.cs" />
     <Compile Include="Controllers\StepsController.cs" />
+    <Compile Include="Controllers\UserRecipesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -197,6 +199,10 @@
     <Compile Include="Migrations\201912201654025_WithType.Designer.cs">
       <DependentUpon>201912201654025_WithType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912221735451_Relations.cs" />
+    <Compile Include="Migrations\201912221735451_Relations.Designer.cs">
+      <DependentUpon>201912221735451_Relations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Ingredient.cs" />
@@ -206,7 +212,9 @@
     <Compile Include="Models\RecipeType.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Step.cs" />
+    <Compile Include="Models\StepIngredient.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRecipe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -301,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912201654025_WithType.resx">
       <DependentUpon>201912201654025_WithType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912221735451_Relations.resx">
+      <DependentUpon>201912221735451_Relations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

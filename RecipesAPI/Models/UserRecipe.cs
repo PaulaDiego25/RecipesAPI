@@ -6,17 +6,16 @@ using System.Web;
 
 namespace RecipesAPI.Models
 {
-    public class Rating
+    public class UserRecipe
     {
         public int Id { get; set; }
-        [Required]
-        public string Comment { get; set; }
-        public DateTime Date { get; set; }
-
-        public int IdUser { get; set; }
-        public User User { get; set; }
+        public bool IsFavourite { get; set; }
+        public int Score { get; set; }
 
         public int IdRecipe { get; set; }
         public Recipe Recipe { get; set; }
+
+        public int IdUser { get; set; }
+        public User User { get; set; }
     }
 }

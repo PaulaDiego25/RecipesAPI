@@ -17,6 +17,13 @@ namespace RecipesAPI.Models
         public string IsPublic { get; set; }
         public DateTime CreationDate { get; set; }
 
-        public string Test { get; set; }
+        public ICollection<Step> Steps { get; set; }
+        public int IdCategory { get; set; }
+        public Category Category { get; set; }
+        public ICollection<UserRecipe> UserRecipes { get; set; }
+        public ICollection<Rating> Ratings { get; set; }
+
+
+
     }
 }

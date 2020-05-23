@@ -12,10 +12,9 @@ namespace RecipesAPI.Models
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
-        public ICollection<Recipe> Recipes { get; set; }
-        public int IdRecipeType { get; set; }
+		
+        public ICollection<Recipe> FKRecipes { get; set; }
+        public int FKTypeId { get; set; }
         public RecipeType RecipeType { get; set; }
-
-
     }
 }

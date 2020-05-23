@@ -13,7 +13,7 @@ namespace RecipesAPI.Models
         [Required]
         public string Title { get; set; }
 
-        public ICollection<StepIngredient> StepIngredients { get; set; }
+        public ICollection<StepIngredient> FKStepIngredients { get; set; }
                           
     }
 }

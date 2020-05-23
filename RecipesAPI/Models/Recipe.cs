@@ -17,11 +17,13 @@ namespace RecipesAPI.Models
         public string IsPublic { get; set; }
         public DateTime CreationDate { get; set; }
 
-        public ICollection<Step> Steps { get; set; }
-        public int IdCategory { get; set; }
-        public Category Category { get; set; }
-        public ICollection<UserRecipe> UserRecipes { get; set; }
-        public ICollection<Rating> Ratings { get; set; }
+        public ICollection<Step> FKStepsId { get; set; }
+		
+        public int FKCategoryId { get; set; }
+        public Category FKCategory { get; set; }
+		
+        public ICollection<UserRecipe> FKUserRecipes { get; set; }
+        public ICollection<Rating> FKRatings { get; set; }
 
 
 

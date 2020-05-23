@@ -31,13 +31,13 @@ namespace RecipesAPI.Models
 
         public System.Data.Entity.DbSet<RecipesAPI.Models.User> Users { get; set; }
 
-        public System.Data.Entity.DbSet<RecipesAPI.Models.Rating> Ratings { get; set; }
+        public System.Data.Entity.DbSet<RecipesAPI.Models.Rating> Comments { get; set; }
 
         public System.Data.Entity.DbSet<RecipesAPI.Models.Step> Steps { get; set; }
 
         public System.Data.Entity.DbSet<RecipesAPI.Models.Ingredient> Ingredients { get; set; }
 
-        public System.Data.Entity.DbSet<RecipesAPI.Models.UserRecipe> UserRecipes { get; set; }
+        public System.Data.Entity.DbSet<RecipesAPI.Models.UserRecipe> UserRecipeRatings { get; set; }
 
         public System.Data.Entity.DbSet<RecipesAPI.Models.StepIngredient> StepIngredients { get; set; }
 

@@ -11,11 +11,11 @@ namespace RecipesAPI.Models
              
         public double Quantity { get; set; }
 
-        public int IdIngredient { get; set; }
-        public Ingredient  Ingredient { get; set; }
+        public int FKIngredientId { get; set; }
+        public Ingredient FKIngredient { get; set; }
 
-        public int IdStep{ get; set; }
-        public Step Step { get; set; }
+        public int FKStepId{ get; set; }
+        public Step FkStep { get; set; }
 
     }
 }

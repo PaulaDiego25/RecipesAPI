@@ -18,16 +18,16 @@ namespace RecipesAPI.Controllers
         private RecipesAPIContext db = new RecipesAPIContext();
 
         // GET: api/UserRecipes
-        public IQueryable<UserRecipe> GetUserRecipes()
+        public IQueryable<UserRecipeRating> GetUserRecipes()
         {
-            return db.UserRecipes;
+            return db.UserRecipeRatings;
         }
 
         // GET: api/UserRecipes/5
-        [ResponseType(typeof(UserRecipe))]
+        [ResponseType(typeof(UserRecipeRating))]
         public async Task<IHttpActionResult> GetUserRecipe(int id)
         {
-            UserRecipe userRecipe = await db.UserRecipes.FindAsync(id);
+            UserRecipeRating userRecipe = await db.UserRecipeRatings.FindAsync(id);
             if (userRecipe == null)
             {
                 return NotFound();
@@ -38,19 +38,19 @@ namespace RecipesAPI.Controllers
 
         // PUT: api/UserRecipes/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutUserRecipe(int id, UserRecipe userRecipe)
+        public async Task<IHttpActionResult> PutUserRecipe(int id, UserRecipeRating userRecipeRating)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != userRecipe.Id)
+            if (id != userRecipeRating.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(userRecipe).State = EntityState.Modified;
+            db.Entry(userRecipeRating).State = EntityState.Modified;
 
             try
             {
@@ -72,31 +72,31 @@ namespace RecipesAPI.Controllers
         }
 
         // POST: api/UserRecipes
-        [ResponseType(typeof(UserRecipe))]
-        public async Task<IHttpActionResult> PostUserRecipe(UserRecipe userRecipe)
+        [ResponseType(typeof(UserRecipeRating))]
+        public async Task<IHttpActionResult> PostUserRecipe(UserRecipeRating userRecipe)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.UserRecipes.Add(userRecipe);
+            db.UserRecipeRatings.Add(userRecipe);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = userRecipe.Id }, userRecipe);
         }
 
         // DELETE: api/UserRecipes/5
-        [ResponseType(typeof(UserRecipe))]
+        [ResponseType(typeof(UserRecipeRating))]
         public async Task<IHttpActionResult> DeleteUserRecipe(int id)
         {
-            UserRecipe userRecipe = await db.UserRecipes.FindAsync(id);
+            UserRecipeRating userRecipe = await db.UserRecipeRatings.FindAsync(id);
             if (userRecipe == null)
             {
                 return NotFound();
             }
 
-            db.UserRecipes.Remove(userRecipe);
+            db.UserRecipeRatings.Remove(userRecipe);
             await db.SaveChangesAsync();
 
             return Ok(userRecipe);
@@ -113,7 +113,7 @@ namespace RecipesAPI.Controllers
 
         private bool UserRecipeExists(int id)
         {
-            return db.UserRecipes.Count(e => e.Id == id) > 0;
+            return db.UserRecipeRatings.Count(e => e.Id == id) > 0;
         }
     }
 }

@@ -18,16 +18,16 @@ namespace RecipesAPI.Controllers
         private RecipesAPIContext db = new RecipesAPIContext();
 
         // GET: api/Ratings
-        public IQueryable<Rating> GetRatings()
+        public IQueryable<Comment> GetRatings()
         {
-            return db.Ratings;
+            return db.Comments;
         }
 
         // GET: api/Ratings/5
-        [ResponseType(typeof(Rating))]
+        [ResponseType(typeof(Comment))]
         public async Task<IHttpActionResult> GetRating(int id)
         {
-            Rating rating = await db.Ratings.FindAsync(id);
+            Comment rating = await db.Comments.FindAsync(id);
             if (rating == null)
             {
                 return NotFound();
@@ -38,19 +38,19 @@ namespace RecipesAPI.Controllers
 
         // PUT: api/Ratings/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutRating(int id, Rating rating)
+        public async Task<IHttpActionResult> PutRating(int id, Comment comment)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != rating.Id)
+            if (id != comment.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(rating).State = EntityState.Modified;
+            db.Entry(comment).State = EntityState.Modified;
 
             try
             {
@@ -72,34 +72,34 @@ namespace RecipesAPI.Controllers
         }
 
         // POST: api/Ratings
-        [ResponseType(typeof(Rating))]
-        public async Task<IHttpActionResult> PostRating(Rating rating)
+        [ResponseType(typeof(Comment))]
+        public async Task<IHttpActionResult> PostRating(Comment comment)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Ratings.Add(rating);
+            db.Comments.Add(comment);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = rating.Id }, rating);
+            return CreatedAtRoute("DefaultApi", new { id = comment.Id }, comment);
         }
 
         // DELETE: api/Ratings/5
-        [ResponseType(typeof(Rating))]
+        [ResponseType(typeof(Comment))]
         public async Task<IHttpActionResult> DeleteRating(int id)
         {
-            Rating rating = await db.Ratings.FindAsync(id);
-            if (rating == null)
+            Comment comment = await db.Comments.FindAsync(id);
+            if (comment == null)
             {
                 return NotFound();
             }
 
-            db.Ratings.Remove(rating);
+            db.Comments.Remove(comment);
             await db.SaveChangesAsync();
 
-            return Ok(rating);
+            return Ok(comment);
         }
 
         protected override void Dispose(bool disposing)
@@ -113,7 +113,7 @@ namespace RecipesAPI.Controllers
 
         private bool RatingExists(int id)
         {
-            return db.Ratings.Count(e => e.Id == id) > 0;
+            return db.Comments.Count(e => e.Id == id) > 0;
         }
     }
 }

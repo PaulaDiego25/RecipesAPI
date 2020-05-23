@@ -22,8 +22,8 @@ namespace RecipesAPI.Models
         public int FKCategoryId { get; set; }
         public Category FKCategory { get; set; }
 		
-        public ICollection<UserRecipe> FKUserRecipes { get; set; }
-        public ICollection<Rating> FKRatings { get; set; }
+        public ICollection<UserRecipeRating> FKUserRecipes { get; set; }
+        public ICollection<Comment> FKRatings { get; set; }
 
 
 

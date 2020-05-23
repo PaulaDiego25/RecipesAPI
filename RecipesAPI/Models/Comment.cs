@@ -10,7 +10,7 @@ namespace RecipesAPI.Models
     {
         public int Id { get; set; }
         [Required]
-        public string Comment { get; set; }
+        public string Content { get; set; }
         public DateTime Date { get; set; }
 
         public int FKUserId { get; set; }

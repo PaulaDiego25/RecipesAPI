@@ -14,7 +14,7 @@ namespace RecipesAPI.Models
         public string Description { get; set; }
 		
         public ICollection<Recipe> FKRecipes { get; set; }
-        public int FKTypeId { get; set; }
-        public RecipeType RecipeType { get; set; }
+        public int FKRecipeTypeId { get; set; }
+        public RecipeType FKRecipeType { get; set; }
     }
 }

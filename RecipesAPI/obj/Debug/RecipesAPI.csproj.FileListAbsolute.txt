@@ -102,3 +102,5 @@ D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Initial1.resou
 D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.WithType.resources
 D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.csprojAssemblyReference.cache
 D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Relations.resources
+D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Datos01.resources
+D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Datos02.resources

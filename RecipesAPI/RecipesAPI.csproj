@@ -203,6 +203,14 @@
     <Compile Include="Migrations\201912221735451_Relations.Designer.cs">
       <DependentUpon>201912221735451_Relations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003101808391_Datos01.cs" />
+    <Compile Include="Migrations\202003101808391_Datos01.Designer.cs">
+      <DependentUpon>202003101808391_Datos01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003101811019_Datos02.cs" />
+    <Compile Include="Migrations\202003101811019_Datos02.Designer.cs">
+      <DependentUpon>202003101811019_Datos02.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Ingredient.cs" />
@@ -312,6 +320,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912221735451_Relations.resx">
       <DependentUpon>201912221735451_Relations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003101808391_Datos01.resx">
+      <DependentUpon>202003101808391_Datos01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003101811019_Datos02.resx">
+      <DependentUpon>202003101811019_Datos02.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

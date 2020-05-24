@@ -14,7 +14,7 @@ namespace RecipesAPI.Models
         public string Description { get; set; }
         public double Time { get; set; }
         public string Picture { get; set; }
-        public string IsPublic { get; set; }
+        public bool IsPublic { get; set; }
         public DateTime CreationDate { get; set; }
 
         public ICollection<Step> Steps { get; set; }

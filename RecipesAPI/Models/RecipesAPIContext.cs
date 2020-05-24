@@ -31,13 +31,13 @@ namespace RecipesAPI.Models
 
         public System.Data.Entity.DbSet<RecipesAPI.Models.User> Users { get; set; }
 
-        public System.Data.Entity.DbSet<RecipesAPI.Models.Rating> Ratings { get; set; }
+        public System.Data.Entity.DbSet<RecipesAPI.Models.Comment> Comments { get; set; }
 
         public System.Data.Entity.DbSet<RecipesAPI.Models.Step> Steps { get; set; }
 
         public System.Data.Entity.DbSet<RecipesAPI.Models.Ingredient> Ingredients { get; set; }
 
-        public System.Data.Entity.DbSet<RecipesAPI.Models.UserRecipe> UserRecipes { get; set; }
+        public System.Data.Entity.DbSet<RecipesAPI.Models.UserRecipeRating> UserRecipeRatings { get; set; }
 
         public System.Data.Entity.DbSet<RecipesAPI.Models.StepIngredient> StepIngredients { get; set; }
 
@@ -45,54 +45,54 @@ namespace RecipesAPI.Models
         {
             // configures one-to-many relationship
             modelBuilder.Entity<StepIngredient>()
-                .HasRequired<Ingredient>(s => s.Ingredient)
-                .WithMany(i => i.StepIngredients)
-                .HasForeignKey<int>(s => s.IdIngredient);
+                .HasRequired<Ingredient>(s => s.FKIngredient)
+                .WithMany(i => i.FKStepIngredients)
+                .HasForeignKey<int>(s => s.FKIngredientId);
 
             modelBuilder.Entity<StepIngredient>()
-                .HasRequired<Step>(s => s.Step)
-                .WithMany(i => i.StepIngredients)
-                .HasForeignKey<int>(s => s.IdStep);
+                .HasRequired<Step>(s => s.FkStep)
+                .WithMany(i => i.FKStepIngredients)
+                .HasForeignKey<int>(s => s.FKStepId);
 
             modelBuilder.Entity<Step>()
-                .HasRequired<Recipe>(s => s.Recipe)
-                .WithMany(r => r.Steps)
-                .HasForeignKey<int>(s => s.IdRecipe);
+                .HasRequired<Recipe>(s => s.FKRecipe)
+                .WithMany(r => r.FKStepsId)
+                .HasForeignKey<int>(s => s.FKRecipeId);
 
             modelBuilder.Entity<Recipe>()
-                .HasRequired<Category>(r => r.Category)
-                .WithMany(c => c.Recipes)
-                .HasForeignKey<int>(r => r.IdCategory);
+                .HasRequired<Category>(r => r.FKCategory)
+                .WithMany(c => c.FKRecipes)
+                .HasForeignKey<int>(r => r.FKCategoryId);
 
             modelBuilder.Entity<Category>()
-                .HasRequired<RecipeType>(c => c.RecipeType)
-                .WithMany(t => t.Categories)
-                .HasForeignKey<int>(c => c.IdRecipeType);
+                .HasRequired<RecipeType>(c => c.FKRecipeType)
+                .WithMany(t => t.FKCategories)
+                .HasForeignKey<int>(c => c.FKRecipeTypeId);
 
-            modelBuilder.Entity<UserRecipe>()
-               .HasRequired<Recipe>(u => u.Recipe)
-               .WithMany(r => r.UserRecipes)
-               .HasForeignKey<int>(u => u.IdRecipe);
+            modelBuilder.Entity<UserRecipeRating>()
+               .HasRequired<Recipe>(u => u.FKRecipe)
+               .WithMany(r => r.FKUserRecipes)
+               .HasForeignKey<int>(u => u.FKRecipeId);
 
-            modelBuilder.Entity<UserRecipe>()
-              .HasRequired<User>(u => u.User)
-              .WithMany(r => r.UserRecipes)
-              .HasForeignKey<int>(u => u.IdUser);
+            modelBuilder.Entity<UserRecipeRating>()
+              .HasRequired<User>(u => u.FKUser)
+              .WithMany(r => r.FKUserRecipes)
+              .HasForeignKey<int>(u => u.FKUserId);
 
             modelBuilder.Entity<User>()
-              .HasRequired<Role>(u => u.Role)
+              .HasRequired<Role>(u => u.FKRole)
               .WithMany(r => r.Users)
-              .HasForeignKey<int>(u => u.IdRole);
+              .HasForeignKey<int>(u => u.FKRoleId);
 
-            modelBuilder.Entity<Rating>()
-              .HasRequired<User>(r => r.User)
-              .WithMany(u => u.Ratings)
-              .HasForeignKey<int>(r => r.IdUser);
+            modelBuilder.Entity<Comment>()
+              .HasRequired<User>(r => r.FKUser)
+              .WithMany(u => u.FKRatings)
+              .HasForeignKey<int>(r => r.FKUserId);
 
-            modelBuilder.Entity<Rating>()
-              .HasRequired<Recipe>(r => r.Recipe)
-              .WithMany(re => re.Ratings)
-              .HasForeignKey<int>(r => r.IdRecipe);
+            modelBuilder.Entity<Comment>()
+              .HasRequired<Recipe>(r => r.FKRecipe)
+              .WithMany(re => re.FKRatings)
+              .HasForeignKey<int>(r => r.FKRecipeId);
 
 
         }

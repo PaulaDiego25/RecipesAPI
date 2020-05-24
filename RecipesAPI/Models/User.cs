@@ -15,12 +15,12 @@ namespace RecipesAPI.Models
         public string Email {get; set; }
         public string Alias { get; set; }
 
-        public ICollection<UserRecipe> UserRecipes { get; set; }
+        public ICollection<UserRecipeRating> FKUserRecipes { get; set; }
 
-        public int IdRole { get; set; }
-        public Role Role { get; set; }
+        public int FKRoleId { get; set; }
+        public Role FKRole { get; set; }
 
-        public ICollection<Rating> Ratings { get; set; }
+        public ICollection<Comment> FKRatings { get; set; }
 
 
     }

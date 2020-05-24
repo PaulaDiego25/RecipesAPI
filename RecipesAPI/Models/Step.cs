@@ -15,9 +15,9 @@ namespace RecipesAPI.Models
         public int Order { get; set; }
         public string Picture { get; set; }
 
-        public ICollection<StepIngredient> StepIngredients { get; set; }
-        public int IdRecipe { get; set; }
-        public Recipe Recipe { get; set; }
+        public ICollection<StepIngredient> FKStepIngredients { get; set; }
+        public int FKRecipeId { get; set; }
+        public Recipe FKRecipe { get; set; }
 
 
     }

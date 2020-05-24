@@ -213,8 +213,8 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Ingredient.cs" />
-    <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Recipe.cs" />
     <Compile Include="Models\RecipesAPIContext.cs" />
     <Compile Include="Models\RecipeType.cs" />
@@ -222,7 +222,7 @@
     <Compile Include="Models\Step.cs" />
     <Compile Include="Models\StepIngredient.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserRecipe.cs" />
+    <Compile Include="Models\UserRecipeRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

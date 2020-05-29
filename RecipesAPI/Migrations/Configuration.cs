@@ -23,54 +23,85 @@ namespace RecipesAPI.Migrations
 
             var roles = new List<Role>
             {
-                new Role { Description = "Administrator"},
-                new Role { Description = "User"}
+                new Role {Id=1, Description = "Administrator"},
+                new Role {Id=2, Description = "User"}
             };
 
-            roles.ForEach(s => context.Roles.AddOrUpdate(p => p.Description, s));
+            roles.ForEach(s => context.Roles.AddOrUpdate(s));
             context.SaveChanges();
 
             var users = new List<User>
             {
-                new User { Name = "Paula Diego", Password = "test", Email= "paulitadiego@gmail.com", Alias="Paula", IdRole=1}
+                new User { Id=1, Name = "Paula Diego", Password = "test", Email= "paulitadiego@gmail.com", Alias="Paula", FKRoleId=1}
             };
 
-            users.ForEach(s => context.Users.AddOrUpdate(p => p.Alias, s));
+            users.ForEach(s => context.Users.AddOrUpdate(s));
             context.SaveChanges();
 
             var recipetypes = new List<RecipeType>
             {
-                new RecipeType {  Description = "Esta es una categoria de prueba", Title = "Bebida"}
+                new RecipeType { Id=1, Description = "Bebidas deliciosas", Title = "Bebida"}
             };
 
-            recipetypes.ForEach(s => context.RecipeTypes.AddOrUpdate(p => p.Title, s));
+            recipetypes.ForEach(s => context.RecipeTypes.AddOrUpdate(s));
             context.SaveChanges();
 
             var categories = new List<Category>
             {
-                new Category {  Description = "Esta es un tipo de prueba", Title = "Bebida Fria", IdRecipeType=1}
+                new Category { Id=1, Description = "Bebidas frias y refrescantes", Title = "Bebida Fria", FKRecipeTypeId=1}
             };
 
-            categories.ForEach(s => context.Categories.AddOrUpdate(p => p.Title, s));
+            categories.ForEach(s => context.Categories.AddOrUpdate(s));
+            context.SaveChanges();
+
+            var recipes = new List<Recipe>
+            {
+                new Recipe {Id=1, FKCategoryId = 1, Title="Limonada", Description = "Esta es una deliciosa limonada sin azucar realfooder",Time=30, IsPublic=false, CreationDate=DateTime.Now}
+            };
+
+            recipes.ForEach(s => context.Recipes.AddOrUpdate(s));
+            context.SaveChanges();
+
+            var steps = new List<Step>
+            {
+                new Step { Id=1, FKRecipeId = 1, Title= "Paso 1", Explanation="Verter el agua en una jarra",Order=1},
+                new Step { Id=2, FKRecipeId = 1, Title= "Paso 2", Explanation="Exprimir los limones",Order=2},
+                new Step { Id=3, FKRecipeId = 1, Title= "Paso 3", Explanation="Verter el jugo de limon en el agua y remover",Order=3},
+            };
+
+            steps.ForEach(s => context.Steps.AddOrUpdate(s));
             context.SaveChanges();
 
             var ingredients = new List<Ingredient>
             {
-                new Ingredient { Title = "Agua"},
-                new Ingredient { Title = "Limón"}
+                new Ingredient { Id=1, Title = "Agua"},
+                new Ingredient { Id=2, Title = "Limón"}
             };
 
-            ingredients.ForEach(s => context.Ingredients.AddOrUpdate(p => p.Title, s));
+            ingredients.ForEach(s => context.Ingredients.AddOrUpdate(s));
             context.SaveChanges();
 
             var stepIngredients = new List<StepIngredient>
             {
-                new StepIngredient { IdIngredient = 1, Quantity= 2},
-                new StepIngredient { IdIngredient = 2, Quantity=1}
+                new StepIngredient { Id=1, FKIngredientId = 1, FKStepId=1, Quantity= 2  },
+                new StepIngredient { Id=2, FKIngredientId = 2, FKStepId=2, Quantity=2}
             };
 
-            stepIngredients.ForEach(s => context.StepIngredients.AddOrUpdate(p => p.IdIngredient, s));
+            stepIngredients.ForEach(s => context.StepIngredients.AddOrUpdate(s));
             context.SaveChanges();
+
+
+                                              
+
+            var userRecipeRatings = new List<UserRecipeRating>
+            {
+                new UserRecipeRating {FKUserId=1,FKRecipeId=1,IsFavourite=true}
+            };
+
+            userRecipeRatings.ForEach(s => context.UserRecipeRatings.AddOrUpdate(s));
+            context.SaveChanges();
+
+
         }
     }
 }

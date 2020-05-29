@@ -50,7 +50,7 @@ namespace RecipesAPI.Models
                 .HasForeignKey<int>(s => s.FKIngredientId);
 
             modelBuilder.Entity<StepIngredient>()
-                .HasRequired<Step>(s => s.FkStep)
+                .HasRequired<Step>(s => s.FKStep)
                 .WithMany(i => i.FKStepIngredients)
                 .HasForeignKey<int>(s => s.FKStepId);
 
@@ -71,7 +71,7 @@ namespace RecipesAPI.Models
 
             modelBuilder.Entity<UserRecipeRating>()
                .HasRequired<Recipe>(u => u.FKRecipe)
-               .WithMany(r => r.FKUserRecipes)
+               .WithMany(r => r.FKUserRecipeRatings)
                .HasForeignKey<int>(u => u.FKRecipeId);
 
             modelBuilder.Entity<UserRecipeRating>()

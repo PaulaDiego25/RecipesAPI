@@ -14,7 +14,7 @@ namespace RecipesAPI.Models
         public string Description { get; set; }
         public double Time { get; set; }
         public string Picture { get; set; }
-        public string IsPublic { get; set; }
+        public bool IsPublic { get; set; }
         public DateTime CreationDate { get; set; }
 
         public ICollection<Step> FKStepsId { get; set; }
@@ -22,7 +22,7 @@ namespace RecipesAPI.Models
         public int FKCategoryId { get; set; }
         public Category FKCategory { get; set; }
 		
-        public ICollection<UserRecipeRating> FKUserRecipes { get; set; }
+        public ICollection<UserRecipeRating> FKUserRecipeRatings { get; set; }
         public ICollection<Comment> FKRatings { get; set; }
 
 

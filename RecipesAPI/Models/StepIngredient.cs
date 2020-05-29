@@ -15,7 +15,7 @@ namespace RecipesAPI.Models
         public Ingredient FKIngredient { get; set; }
 
         public int FKStepId{ get; set; }
-        public Step FkStep { get; set; }
+        public Step FKStep { get; set; }
 
     }
 }

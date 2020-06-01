@@ -23,6 +23,12 @@ namespace RecipesAPI.Controllers
             return db.Categories;
         }
 
+        // GET: api/CategoriesByRecipeType/5
+        public IQueryable<Category> GetCategoriesByRecipeType(int id)
+        {
+            return db.Categories.Where(c => c.FKRecipeType.Id == id);
+        }
+
         // GET: api/Categories/5
         [ResponseType(typeof(Category))]
         public async Task<IHttpActionResult> GetCategory(int id)

@@ -40,7 +40,11 @@ namespace RecipesAPI.Migrations
 
             var recipetypes = new List<RecipeType>
             {
-                new RecipeType { Id=1, Description = "Bebidas deliciosas", Title = "Bebida"}
+                new RecipeType { Id=1, Description = "Todo tipo de bebidas", Title = "Bebida"},
+                new RecipeType { Id=2, Description = "Para tomar antes de un plato principal", Title = "Entrantes"},
+                new RecipeType { Id=3, Description = "", Title = "Platos principales"},
+                new RecipeType { Id=4, Description = "Comidas de acompañamiento a platos principales", Title = "Complementos"},
+                new RecipeType { Id=5, Description = "Para finalizar la comida", Title = "Postres"},
             };
 
             recipetypes.ForEach(s => context.RecipeTypes.AddOrUpdate(s));
@@ -48,7 +52,30 @@ namespace RecipesAPI.Migrations
 
             var categories = new List<Category>
             {
-                new Category { Id=1, Description = "Bebidas frias y refrescantes", Title = "Bebida Fria", FKRecipeTypeId=1}
+                new Category { Id=1, Description = "Bebidas frias y refrescantes", Title = "Refrescos", FKRecipeTypeId=1},
+                new Category { Id=2, Description = "Bebida obtenida de las hojas, las flores, las raíces, las cortezas, los frutos o las semillas de ciertas hierbas y plantas", Title = "Infusiones", FKRecipeTypeId=1},
+                new Category { Id=3, Description = "Bebida elaborada a base de leche, puede ser frio o caliente", Title = "Batidos", FKRecipeTypeId=1},
+
+                new Category { Id=4, Description = "", Title = "Entrantes frios", FKRecipeTypeId=2},
+                new Category { Id=5, Description = "", Title = "Entrantes calientes", FKRecipeTypeId=2},
+
+                new Category { Id=6, Description = "", Title = "Mariscos", FKRecipeTypeId=3},
+                new Category { Id=7, Description = "", Title = "Carnes", FKRecipeTypeId=3},
+                new Category { Id=8, Description = "", Title = "Pastas", FKRecipeTypeId=3},
+                new Category { Id=9, Description = "", Title = "Arroces", FKRecipeTypeId=3},
+                new Category { Id=10, Description = "", Title = "Pescados", FKRecipeTypeId=3},
+                new Category { Id=11, Description = "", Title = "Guisos", FKRecipeTypeId=3},
+
+                
+                new Category { Id=12, Description = "", Title = "Ensaladas", FKRecipeTypeId=4},
+                new Category { Id=13, Description = "", Title = "Salsas", FKRecipeTypeId=4},
+                new Category { Id=14, Description = "", Title = "Encurtidos", FKRecipeTypeId=4},
+
+                new Category { Id=12, Description = "", Title = "Helados", FKRecipeTypeId=5},
+                new Category { Id=13, Description = "", Title = "Lacteos", FKRecipeTypeId=5},
+                new Category { Id=14, Description = "", Title = "Frutas", FKRecipeTypeId=5},
+                new Category { Id=15, Description = "", Title = "Bollería", FKRecipeTypeId=5},
+
             };
 
             categories.ForEach(s => context.Categories.AddOrUpdate(s));

@@ -24,6 +24,7 @@ namespace RecipesAPI.Controllers
         }
 
         // GET: api/CategoriesByRecipeType/5
+        [Route("api/CategoriesByRecipeType")]
         public IQueryable<Category> GetCategoriesByRecipeType(int id)
         {
             return db.Categories.Where(c => c.FKRecipeType.Id == id);

@@ -7,13 +7,13 @@ namespace RecipesAPI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Datos01 : IMigrationMetadata
+    public sealed partial class Datos : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Datos01));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Datos));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003101808391_Datos01"; }
+            get { return "202005241605240_Datos"; }
         }
         
         string IMigrationMetadata.Source

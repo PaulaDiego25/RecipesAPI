@@ -96,11 +96,10 @@ D:\Proyecto\RecipesAPI\RecipesAPI\bin\MySql.Data.dll
 D:\Proyecto\RecipesAPI\RecipesAPI\bin\MySql.Data.Entity.EF6.dll
 D:\Proyecto\RecipesAPI\RecipesAPI\bin\MySql.Data.xml
 D:\Proyecto\RecipesAPI\RecipesAPI\bin\MySql.Data.Entity.EF6.xml
-D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Initial.resources
-D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.csproj.GenerateResource.cache
-D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Initial1.resources
-D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.WithType.resources
 D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.csprojAssemblyReference.cache
-D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Relations.resources
-D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Datos01.resources
-D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Datos02.resources
+D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.csproj.CoreCompileInputs.cache
+D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Refactorizacion.resources
+D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.csproj.GenerateResource.cache
+D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Refactorizacion2.resources
+D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Datos.resources
+D:\Proyecto\RecipesAPI\RecipesAPI\obj\Debug\RecipesAPI.Migrations.Datos2.resources

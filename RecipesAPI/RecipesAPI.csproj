@@ -187,29 +187,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912191745097_Initial.cs" />
-    <Compile Include="Migrations\201912191745097_Initial.Designer.cs">
-      <DependentUpon>201912191745097_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202005241523429_Refactorizacion.cs" />
+    <Compile Include="Migrations\202005241523429_Refactorizacion.Designer.cs">
+      <DependentUpon>202005241523429_Refactorizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912201628233_Initial1.cs" />
-    <Compile Include="Migrations\201912201628233_Initial1.Designer.cs">
-      <DependentUpon>201912201628233_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\202005241534185_Refactorizacion2.cs" />
+    <Compile Include="Migrations\202005241534185_Refactorizacion2.Designer.cs">
+      <DependentUpon>202005241534185_Refactorizacion2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912201654025_WithType.cs" />
-    <Compile Include="Migrations\201912201654025_WithType.Designer.cs">
-      <DependentUpon>201912201654025_WithType.cs</DependentUpon>
+    <Compile Include="Migrations\202005241605240_Datos.cs" />
+    <Compile Include="Migrations\202005241605240_Datos.Designer.cs">
+      <DependentUpon>202005241605240_Datos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201912221735451_Relations.cs" />
-    <Compile Include="Migrations\201912221735451_Relations.Designer.cs">
-      <DependentUpon>201912221735451_Relations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003101808391_Datos01.cs" />
-    <Compile Include="Migrations\202003101808391_Datos01.Designer.cs">
-      <DependentUpon>202003101808391_Datos01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202003101811019_Datos02.cs" />
-    <Compile Include="Migrations\202003101811019_Datos02.Designer.cs">
-      <DependentUpon>202003101811019_Datos02.cs</DependentUpon>
+    <Compile Include="Migrations\202005241612376_Datos2.cs" />
+    <Compile Include="Migrations\202005241612376_Datos2.Designer.cs">
+      <DependentUpon>202005241612376_Datos2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -309,23 +301,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912191745097_Initial.resx">
-      <DependentUpon>201912191745097_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005241523429_Refactorizacion.resx">
+      <DependentUpon>202005241523429_Refactorizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912201628233_Initial1.resx">
-      <DependentUpon>201912201628233_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005241534185_Refactorizacion2.resx">
+      <DependentUpon>202005241534185_Refactorizacion2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912201654025_WithType.resx">
-      <DependentUpon>201912201654025_WithType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005241605240_Datos.resx">
+      <DependentUpon>202005241605240_Datos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912221735451_Relations.resx">
-      <DependentUpon>201912221735451_Relations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003101808391_Datos01.resx">
-      <DependentUpon>202003101808391_Datos01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202003101811019_Datos02.resx">
-      <DependentUpon>202003101811019_Datos02.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005241612376_Datos2.resx">
+      <DependentUpon>202005241612376_Datos2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

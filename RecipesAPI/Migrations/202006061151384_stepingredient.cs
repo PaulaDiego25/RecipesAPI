@@ -3,7 +3,7 @@ namespace RecipesAPI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Refactorizacion : DbMigration
+    public partial class stepingredient : DbMigration
     {
         public override void Up()
         {
@@ -113,7 +113,7 @@ namespace RecipesAPI.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Quantity = c.Double(nullable: false),
+                        Quantity = c.String(unicode: false),
                         FKIngredientId = c.Int(nullable: false),
                         FKStepId = c.Int(nullable: false),
                     })

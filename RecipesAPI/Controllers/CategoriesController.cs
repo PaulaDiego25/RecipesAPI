@@ -43,6 +43,17 @@ namespace RecipesAPI.Controllers
             return Ok(category);
         }
 
+     
+        // GET: api/CategoryByRecipe/5
+        [Route("api/CategoryByRecipe")]
+        public Category GetCategoryByRecipe(int recipeId)
+        {
+            Recipe recipe = db.Recipes.Single(r => r.Id == recipeId);
+            Category category = db.Categories.Single(c => c.Id == recipe.FKCategoryId);
+            category.FKRecipes = null;
+            return category;
+        }
+
         // PUT: api/Categories/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutCategory(int id, Category category)

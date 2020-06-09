@@ -36,6 +36,18 @@ namespace RecipesAPI.Controllers
             return Ok(ingredient);
         }
 
+        // GET: api/IngredientByStepIngredient/5
+        [Route("api/IngredientByStepIngredient")]
+        public Ingredient GetIngredientByStepIngredient(int stepIngredientId)
+        {
+            StepIngredient stepIngredient = db.StepIngredients.Single(s => s.Id == stepIngredientId);
+            Ingredient i = db.Ingredients.Single(r => r.Id == stepIngredient.FKIngredientId);
+            i.FKStepIngredients = null;
+            return i;
+
+        }
+
+
         // PUT: api/Ingredients/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutIngredient(int id, Ingredient ingredient)

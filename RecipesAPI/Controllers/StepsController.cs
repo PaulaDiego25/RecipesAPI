@@ -36,6 +36,20 @@ namespace RecipesAPI.Controllers
             return Ok(step);
         }
 
+        // GET: api/StepsByRecipe/5
+        [Route("api/StepsByRecipe")]
+        public IQueryable<Step> GetStepsByRecipe(int id)
+        {
+            return db.Steps.Where(c => c.FKRecipe.Id == id).OrderBy(c => c.Order);
+        }
+
+        // GET: api/NewStepOrder/5
+        [Route("api/NewStepOrder")]
+        public int GetNewStepOrder(int id)
+        {
+            return db.Steps.Count(c => c.FKRecipe.Id == id) + 1;
+        }
+
         // PUT: api/Steps/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutStep(int id, Step step)

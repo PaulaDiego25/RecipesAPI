@@ -36,6 +36,14 @@ namespace RecipesAPI.Controllers
             return Ok(recipe);
         }
 
+        // GET: api/RecipeVersions/5
+        /*[Route("api/RecipeVersions")]
+        public IQueryable<Recipe> GetRecipeVersions(int recipeId)
+        {
+            return db.Recipes.Where(r => r.FK == recipeId);
+        }*/
+
+
         // PUT: api/Recipes/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutRecipe(int id, Recipe recipe)

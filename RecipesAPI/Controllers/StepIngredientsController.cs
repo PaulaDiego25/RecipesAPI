@@ -36,6 +36,15 @@ namespace RecipesAPI.Controllers
             return Ok(stepIngredient);
         }
 
+        // GET: api/IngredientsByStep/5
+        [Route("api/IngredientsByStep")]
+        public IQueryable<StepIngredient> GetIngredientsByStep(int stepId)
+        {
+
+            return db.StepIngredients.Where(r => r.FKStepId == stepId);
+                           
+        }
+
         // PUT: api/StepIngredients/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutStepIngredient(int id, StepIngredient stepIngredient)

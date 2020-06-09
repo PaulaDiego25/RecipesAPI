@@ -102,7 +102,15 @@ namespace RecipesAPI.Migrations
             var ingredients = new List<Ingredient>
             {
                 new Ingredient { Id=1, Title = "Agua"},
-                new Ingredient { Id=2, Title = "Limón"}
+                new Ingredient { Id=2, Title = "Limón"},
+                new Ingredient { Id=3, Title = "Harina"},
+                new Ingredient { Id=4, Title = "Aceite"},
+                new Ingredient { Id=5, Title = "Azúcar"},
+                new Ingredient { Id=6, Title = "Levadura"},
+                new Ingredient { Id=7, Title = "Leche"},
+                new Ingredient { Id=8, Title = "Menta"},
+                new Ingredient { Id=9, Title = "Jenjibre"}
+
             };
 
             ingredients.ForEach(s => context.Ingredients.AddOrUpdate(s));
@@ -110,8 +118,8 @@ namespace RecipesAPI.Migrations
 
             var stepIngredients = new List<StepIngredient>
             {
-                new StepIngredient { Id=1, FKIngredientId = 1, FKStepId=1, Quantity= 2  },
-                new StepIngredient { Id=2, FKIngredientId = 2, FKStepId=2, Quantity=2}
+                new StepIngredient { Id=1, FKIngredientId = 1, FKStepId=1, Quantity= "1,5 litros" },
+                new StepIngredient { Id=2, FKIngredientId = 2, FKStepId=2, Quantity= "2 unidades"}
             };
 
             stepIngredients.ForEach(s => context.StepIngredients.AddOrUpdate(s));

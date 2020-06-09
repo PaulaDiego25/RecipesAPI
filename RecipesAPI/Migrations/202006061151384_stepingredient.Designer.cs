@@ -7,13 +7,13 @@ namespace RecipesAPI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Refactorizacion2 : IMigrationMetadata
+    public sealed partial class stepingredient : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Refactorizacion2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(stepingredient));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005241534185_Refactorizacion2"; }
+            get { return "202006061151384_stepingredient"; }
         }
         
         string IMigrationMetadata.Source

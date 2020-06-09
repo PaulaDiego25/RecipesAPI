@@ -187,25 +187,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005241523429_Refactorizacion.cs" />
-    <Compile Include="Migrations\202005241523429_Refactorizacion.Designer.cs">
-      <DependentUpon>202005241523429_Refactorizacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005241534185_Refactorizacion2.cs" />
-    <Compile Include="Migrations\202005241534185_Refactorizacion2.Designer.cs">
-      <DependentUpon>202005241534185_Refactorizacion2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005241605240_Datos.cs" />
-    <Compile Include="Migrations\202005241605240_Datos.Designer.cs">
-      <DependentUpon>202005241605240_Datos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005241612376_Datos2.cs" />
-    <Compile Include="Migrations\202005241612376_Datos2.Designer.cs">
-      <DependentUpon>202005241612376_Datos2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006011644111_categorias.cs" />
-    <Compile Include="Migrations\202006011644111_categorias.Designer.cs">
-      <DependentUpon>202006011644111_categorias.cs</DependentUpon>
+    <Compile Include="Migrations\202006061151384_stepingredient.cs" />
+    <Compile Include="Migrations\202006061151384_stepingredient.Designer.cs">
+      <DependentUpon>202006061151384_stepingredient.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -305,20 +289,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005241523429_Refactorizacion.resx">
-      <DependentUpon>202005241523429_Refactorizacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005241534185_Refactorizacion2.resx">
-      <DependentUpon>202005241534185_Refactorizacion2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005241605240_Datos.resx">
-      <DependentUpon>202005241605240_Datos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005241612376_Datos2.resx">
-      <DependentUpon>202005241612376_Datos2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006011644111_categorias.resx">
-      <DependentUpon>202006011644111_categorias.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006061151384_stepingredient.resx">
+      <DependentUpon>202006061151384_stepingredient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

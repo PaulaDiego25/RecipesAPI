@@ -9,7 +9,7 @@ namespace RecipesAPI.Models
     {
         public int Id { get; set; }
              
-        public double Quantity { get; set; }
+        public string Quantity { get; set; }
 
         public int FKIngredientId { get; set; }
         public Ingredient FKIngredient { get; set; }

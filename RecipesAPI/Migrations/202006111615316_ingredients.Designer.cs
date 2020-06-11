@@ -7,13 +7,13 @@ namespace RecipesAPI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class stepingredient : IMigrationMetadata
+    public sealed partial class ingredients : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(stepingredient));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ingredients));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006061151384_stepingredient"; }
+            get { return "202006111615316_ingredients"; }
         }
         
         string IMigrationMetadata.Source

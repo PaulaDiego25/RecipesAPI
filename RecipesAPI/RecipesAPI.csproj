@@ -187,9 +187,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006061151384_stepingredient.cs" />
-    <Compile Include="Migrations\202006061151384_stepingredient.Designer.cs">
-      <DependentUpon>202006061151384_stepingredient.cs</DependentUpon>
+    <Compile Include="Migrations\202006111544230_limpieza.cs" />
+    <Compile Include="Migrations\202006111544230_limpieza.Designer.cs">
+      <DependentUpon>202006111544230_limpieza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006111615316_ingredients.cs" />
+    <Compile Include="Migrations\202006111615316_ingredients.Designer.cs">
+      <DependentUpon>202006111615316_ingredients.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -289,8 +293,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006061151384_stepingredient.resx">
-      <DependentUpon>202006061151384_stepingredient.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006111544230_limpieza.resx">
+      <DependentUpon>202006111544230_limpieza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006111615316_ingredients.resx">
+      <DependentUpon>202006111615316_ingredients.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -25,6 +25,11 @@ namespace RecipesAPI.Models
         public ICollection<UserRecipeRating> FKUserRecipeRatings { get; set; }
         public ICollection<Comment> FKRatings { get; set; }
 
+        public Recipe FKFatherRecipe { get; set; }
+        public Nullable<int> FKFatherRecipeId { get; set; }
+
+
+
 
 
     }

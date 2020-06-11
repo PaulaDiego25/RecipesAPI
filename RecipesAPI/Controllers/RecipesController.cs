@@ -35,13 +35,19 @@ namespace RecipesAPI.Controllers
 
             return Ok(recipe);
         }
+        // GET: api/MainRecipes
+        [Route("api/MainRecipes")]
+        public IQueryable<Recipe> GetMainRecipes()
+        {
+            return db.Recipes.Where(r => !r.FKFatherRecipeId.HasValue);
+        }
 
         // GET: api/RecipeVersions/5
-        /*[Route("api/RecipeVersions")]
+        [Route("api/RecipeVersions")]
         public IQueryable<Recipe> GetRecipeVersions(int recipeId)
         {
-            return db.Recipes.Where(r => r.FK == recipeId);
-        }*/
+            return db.Recipes.Where(r => r.FKFatherRecipeId == recipeId || r.Id == recipeId);
+        }
 
 
         // PUT: api/Recipes/5

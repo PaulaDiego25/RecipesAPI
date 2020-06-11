@@ -65,8 +65,9 @@ namespace RecipesAPI.Migrations
                 new Category { Id=9, Description = "", Title = "Arroces", FKRecipeTypeId=3},
                 new Category { Id=10, Description = "", Title = "Pescados", FKRecipeTypeId=3},
                 new Category { Id=11, Description = "", Title = "Guisos", FKRecipeTypeId=3},
+                new Category { Id=16, Description = "", Title = "Tortillas", FKRecipeTypeId=3},
 
-                
+
                 new Category { Id=12, Description = "", Title = "Ensaladas", FKRecipeTypeId=4},
                 new Category { Id=13, Description = "", Title = "Salsas", FKRecipeTypeId=4},
                 new Category { Id=14, Description = "", Title = "Encurtidos", FKRecipeTypeId=4},
@@ -76,6 +77,8 @@ namespace RecipesAPI.Migrations
                 new Category { Id=14, Description = "", Title = "Frutas", FKRecipeTypeId=5},
                 new Category { Id=15, Description = "", Title = "Bollería", FKRecipeTypeId=5},
 
+
+
             };
 
             categories.ForEach(s => context.Categories.AddOrUpdate(s));
@@ -83,7 +86,8 @@ namespace RecipesAPI.Migrations
 
             var recipes = new List<Recipe>
             {
-                new Recipe {Id=1, FKCategoryId = 1, Title="Limonada", Description = "Esta es una deliciosa limonada sin azucar realfooder",Time=30, IsPublic=false, CreationDate=DateTime.Now}
+                new Recipe {Id=1, FKCategoryId = 1, Title="Limonada", Description = "Esta es una deliciosa limonada sin azucar realfooder",Time=30, IsPublic=false, CreationDate=DateTime.Now},
+                new Recipe {Id=2, FKCategoryId = 1,FKFatherRecipeId=1, Title="Limonada con menta", Description = "Version de la liminada con menta",Time=15, IsPublic=false, CreationDate=DateTime.Now}
             };
 
             recipes.ForEach(s => context.Recipes.AddOrUpdate(s));
@@ -94,6 +98,9 @@ namespace RecipesAPI.Migrations
                 new Step { Id=1, FKRecipeId = 1, Title= "Paso 1", Explanation="Verter el agua en una jarra",Order=1},
                 new Step { Id=2, FKRecipeId = 1, Title= "Paso 2", Explanation="Exprimir los limones",Order=2},
                 new Step { Id=3, FKRecipeId = 1, Title= "Paso 3", Explanation="Verter el jugo de limon en el agua y remover",Order=3},
+                new Step { Id=4, FKRecipeId = 2, Title= "Paso 1", Explanation="Verter el agua en una jarra",Order=1},
+                new Step { Id=5, FKRecipeId = 2, Title= "Paso 2", Explanation="Exprimir los limones",Order=2},
+                new Step { Id=6, FKRecipeId = 2, Title= "Paso 3", Explanation="Verter el jugo de limon en el agua, añadir las hojas de menta previamente lavadas y remover",Order=3}
             };
 
             steps.ForEach(s => context.Steps.AddOrUpdate(s));
@@ -109,7 +116,10 @@ namespace RecipesAPI.Migrations
                 new Ingredient { Id=6, Title = "Levadura"},
                 new Ingredient { Id=7, Title = "Leche"},
                 new Ingredient { Id=8, Title = "Menta"},
-                new Ingredient { Id=9, Title = "Jenjibre"}
+                new Ingredient { Id=9, Title = "Jenjibre"},
+                new Ingredient { Id=10, Title = "Sal"},
+                new Ingredient { Id=11, Title = "Huevos"}
+
 
             };
 
@@ -119,13 +129,14 @@ namespace RecipesAPI.Migrations
             var stepIngredients = new List<StepIngredient>
             {
                 new StepIngredient { Id=1, FKIngredientId = 1, FKStepId=1, Quantity= "1,5 litros" },
-                new StepIngredient { Id=2, FKIngredientId = 2, FKStepId=2, Quantity= "2 unidades"}
+                new StepIngredient { Id=2, FKIngredientId = 2, FKStepId=2, Quantity= "2 unidades"},
+                new StepIngredient { Id=3, FKIngredientId = 1, FKStepId=4, Quantity= "1,5 litros" },
+                new StepIngredient { Id=4, FKIngredientId = 2, FKStepId=5, Quantity= "2 unidades"},
+                new StepIngredient { Id=5, FKIngredientId = 8, FKStepId=6, Quantity= "4 unidades"}
             };
 
             stepIngredients.ForEach(s => context.StepIngredients.AddOrUpdate(s));
             context.SaveChanges();
-
-
                                               
 
             var userRecipeRatings = new List<UserRecipeRating>

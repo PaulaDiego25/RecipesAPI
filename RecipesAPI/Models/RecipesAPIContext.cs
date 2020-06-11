@@ -64,6 +64,9 @@ namespace RecipesAPI.Models
                 .WithMany(c => c.FKRecipes)
                 .HasForeignKey<int>(r => r.FKCategoryId);
 
+            /*modelBuilder.Entity<Recipe>()
+               .HasOptional<Recipe>(r => r.FKFatherRecipe);*/
+
             modelBuilder.Entity<Category>()
                 .HasRequired<RecipeType>(c => c.FKRecipeType)
                 .WithMany(t => t.FKCategories)

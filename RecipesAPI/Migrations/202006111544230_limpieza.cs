@@ -3,7 +3,7 @@ namespace RecipesAPI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class stepingredient : DbMigration
+    public partial class limpieza : DbMigration
     {
         public override void Up()
         {
@@ -32,10 +32,13 @@ namespace RecipesAPI.Migrations
                         IsPublic = c.Boolean(nullable: false),
                         CreationDate = c.DateTime(nullable: false, precision: 0),
                         FKCategoryId = c.Int(nullable: false),
+                        FKFatherRecipeId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Categories", t => t.FKCategoryId, cascadeDelete: true)
-                .Index(t => t.FKCategoryId);
+                .ForeignKey("dbo.Recipes", t => t.FKFatherRecipeId)
+                .Index(t => t.FKCategoryId)
+                .Index(t => t.FKFatherRecipeId);
             
             CreateTable(
                 "dbo.Comments",
@@ -155,6 +158,7 @@ namespace RecipesAPI.Migrations
             DropForeignKey("dbo.UserRecipeRatings", "FKRecipeId", "dbo.Recipes");
             DropForeignKey("dbo.Users", "FKRoleId", "dbo.Roles");
             DropForeignKey("dbo.Comments", "FKRecipeId", "dbo.Recipes");
+            DropForeignKey("dbo.Recipes", "FKFatherRecipeId", "dbo.Recipes");
             DropForeignKey("dbo.Recipes", "FKCategoryId", "dbo.Categories");
             DropIndex("dbo.StepIngredients", new[] { "FKStepId" });
             DropIndex("dbo.StepIngredients", new[] { "FKIngredientId" });
@@ -164,6 +168,7 @@ namespace RecipesAPI.Migrations
             DropIndex("dbo.Users", new[] { "FKRoleId" });
             DropIndex("dbo.Comments", new[] { "FKRecipeId" });
             DropIndex("dbo.Comments", new[] { "FKUserId" });
+            DropIndex("dbo.Recipes", new[] { "FKFatherRecipeId" });
             DropIndex("dbo.Recipes", new[] { "FKCategoryId" });
             DropIndex("dbo.Categories", new[] { "FKRecipeTypeId" });
             DropTable("dbo.RecipeTypes");
